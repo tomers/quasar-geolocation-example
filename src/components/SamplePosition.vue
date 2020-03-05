@@ -1,14 +1,14 @@
 <template>
-  <div v-if="position">
+  <div v-if="coords">
     <GmapMap
-      :center="{lat:10, lng:10}"
-      :zoom="7"
+      :center="center"
+      :zoom="15"
       map-type-id="terrain"
       style="width: 500px; height: 300px"
     >
       <GmapMarker
         v-for="(m, index) in markers"
-        :key="index"
+        :key="`marker_${index}`"
         :position="m.position"
         :clickable="true"
         :draggable="true"
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -28,9 +28,22 @@ export default {
     }
   },
   computed: {
-    ...mapState('positioning', [
-      'position'
-    ])
+    center () {
+      return this.coords && { lat: this.latitude, lng: this.longitude }
+    },
+    centerMapper () {
+      return this.center && { position: this.center }
+    },
+    ...mapGetters('positioning', {
+      coords: 'getterCoords',
+      latitude: 'getterLatitude',
+      longitude: 'getterLongitude'
+    })
+  },
+  watch: {
+    centerMapper () {
+      this.markers = this.centerMapper ? [this.centerMapper] : []
+    }
   },
   created () {
     this.actionSamplePosition()

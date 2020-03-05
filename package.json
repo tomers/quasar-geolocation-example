@@ -1,8 +1,8 @@
 {
-  "name": "quasar-positioning-example",
+  "name": "quasar-geolocation-example",
   "version": "0.0.1",
-  "description": "Sample app to demonstrate usage of positioning with Quasar Framework",
-  "productName": "Quasar Positioning Example",
+  "description": "Sample app to demonstrate usage of getlocation with Quasar Framework",
+  "productName": "Quasar Geolocation Example",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "Tomer Shalev <shalev.tomer@gmail.com>",

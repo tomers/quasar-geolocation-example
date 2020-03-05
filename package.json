@@ -1,7 +1,7 @@
 {
   "name": "quasar-geolocation-example",
   "version": "0.0.1",
-  "description": "Sample app to demonstrate usage of getlocation with Quasar Framework",
+  "description": "Sample app to demonstrate usage of geolocation with Quasar Framework",
   "productName": "Quasar Geolocation Example",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",

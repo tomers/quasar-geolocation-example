@@ -3,7 +3,7 @@
 Sample app to demonstrate usage of positioning with Quasar Framework
 
 ## Demo
-[Demo app](http://quasar-i18.surge.sh/)
+[Demo app](https://quasar-geolocation-example.surge.sh/)
 
 ## Relevant documentation
 - [Navigator.geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)

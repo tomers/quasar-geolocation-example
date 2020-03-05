@@ -2,6 +2,8 @@
 
 Sample app to demonstrate usage of positioning with Quasar Framework
 
+![Building and deploying to surge](https://github.com/tomers/quasar-geolocation-example/workflows/Building%20and%20deploying%20to%20surge/badge.svg)
+
 ## Demo
 [Demo app](https://quasar-geolocation-example.surge.sh/)
 

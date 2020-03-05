@@ -2,6 +2,14 @@
 
 Sample app to demonstrate usage of positioning with Quasar Framework
 
+## Demo
+[Demo app](http://quasar-i18.surge.sh/)
+
+## Relevant documentation
+- [Navigator.geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)
+- [Google Maps JavaScript API V3 Reference](https://developers.google.com/maps/documentation/javascript/reference)
+- [xkjyeah/vue-google-maps](https://github.com/xkjyeah/vue-google-maps)
+
 ## Install the dependencies
 ```bash
 yarn

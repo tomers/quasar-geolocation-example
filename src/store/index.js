@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import positioning from './positioning'
+
 Vue.use(Vuex)
 
 /*
@@ -15,6 +17,7 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
+      positioning
     },
 
     // enable strict mode (adds overhead!)

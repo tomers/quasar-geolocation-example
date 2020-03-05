@@ -1,11 +1,16 @@
 <template>
   <q-page class="flex flex-center">
-    Page
+    <frontpage-component />
   </q-page>
 </template>
 
 <script>
+import FrontpageComponent from '../components/FrontpageComponent'
+
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  components: {
+    FrontpageComponent
+  }
 }
 </script>

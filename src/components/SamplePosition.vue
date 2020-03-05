@@ -1,5 +1,6 @@
 <template>
   <div v-if="coords">
+    <div>Accuracy: {{ accuracy }} meters</div>
     <GmapMap
       :center="center"
       :zoom="15"
@@ -13,6 +14,10 @@
         :clickable="true"
         :draggable="true"
         @click="center=m.position"
+      />
+      <GmapCircle
+        :center="center"
+        :radius="accuracy"
       />
     </GmapMap>
   </div>
@@ -37,7 +42,8 @@ export default {
     ...mapGetters('positioning', {
       coords: 'getterCoords',
       latitude: 'getterLatitude',
-      longitude: 'getterLongitude'
+      longitude: 'getterLongitude',
+      accuracy: 'getterAccuracy'
     })
   },
   watch: {

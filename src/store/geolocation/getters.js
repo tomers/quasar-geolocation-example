@@ -1,3 +1,19 @@
+export function getterIsPermissionKnown (state) {
+  return state.permission !== null
+}
+
+export function getterIsPermissionGranted (state) {
+  return state.permission === 'granted'
+}
+
+export function getterIsPermissionPrompt (state) {
+  return state.permission === 'prompt'
+}
+
+export function getterIsPermissionDenied (state) {
+  return state.permission === 'denied'
+}
+
 export function getterHasPosition (state) {
   return state.position && state.position.timestamp
 }

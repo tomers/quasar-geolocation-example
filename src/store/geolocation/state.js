@@ -1,5 +1,6 @@
 export default function () {
   return {
-    position: null
+    position: null,
+    permission: null
   }
 }

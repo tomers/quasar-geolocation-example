@@ -1,30 +1,31 @@
 <template>
   <div class="column q-gutter-md">
-    <q-btn
-      label="Sample Position"
-      color="primary"
-      @click="onSample"
-    />
-    <sample-position v-if="sample" />
+    <sample-geolocation-button />
+    <geolocation-permission-banner />
+    <sample-position v-if="getterHasPosition" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import GeolocationPermissionBanner from './GeolocationPermissionBanner'
+import SampleGeolocationButton from './SampleGeolocationButton'
 import SamplePosition from './SamplePosition'
 
 export default {
   components: {
+    GeolocationPermissionBanner,
+    SampleGeolocationButton,
     SamplePosition
   },
   data () {
     return {
-      sample: false
     }
   },
-  methods: {
-    onSample () {
-      this.sample = true
-    }
+  computed: {
+    ...mapGetters('geolocation', [
+      'getterHasPosition'
+    ])
   }
 }
 </script>

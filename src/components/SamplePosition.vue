@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -50,14 +50,6 @@ export default {
     centerMapper () {
       this.markers = this.centerMapper ? [this.centerMapper] : []
     }
-  },
-  created () {
-    this.actionSamplePosition()
-  },
-  methods: {
-    ...mapActions('geolocation', [
-      'actionSamplePosition'
-    ])
   }
 }
 </script>

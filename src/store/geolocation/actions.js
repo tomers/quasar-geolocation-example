@@ -15,18 +15,35 @@ function cloneAsObject (obj) {
 }
 
 export function actionSamplePosition (context) {
-  const geolocation = navigator && navigator.geolocation
-  if (!geolocation) {
-    console.error('Geolocation object not available')
-    return
-  }
-  geolocation.getCurrentPosition(
-    position => {
-      const positionObj = cloneAsObject(position)
-      context.commit('mutationSetPosition', { position: positionObj })
-    },
-    error => {
-      console.error(`Failed getting geolocation: ${error.message}`)
-      console.dir(error)
-    })
+  return new Promise((resolve, reject) => {
+    const geolocation = navigator && navigator.geolocation
+    if (!geolocation) {
+      console.error('Geolocation object not available')
+      reject('Geolocation object not available')
+    }
+    geolocation.getCurrentPosition(
+      position => {
+        const positionObj = cloneAsObject(position)
+        context.commit('mutationSetPosition', { position: positionObj })
+        resolve()
+      },
+      error => {
+        console.error(`Failed getting geolocation: ${error.message}`)
+        reject(error)
+      })
+  })
+}
+
+export function actionQueryPermission (context) {
+  return new Promise((resolve, reject) => {
+    navigator.permissions.query({ name: 'geolocation' })
+      .then((result) => {
+        // one of (granted, prompt, denied)
+        context.commit('mutationSetPermission', { permission: result.state })
+        resolve()
+      })
+      .catch(error => {
+        reject(error)
+      })
+  })
 }

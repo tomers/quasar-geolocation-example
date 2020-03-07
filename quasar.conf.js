@@ -100,9 +100,9 @@ module.exports = function (ctx) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Quasar Positioning Example',
-        short_name: 'Quasar Positioning Example',
-        description: 'Sample app to demonstrate usage of positioning with Quasar Framework',
+        name: 'Quasar Geolocation Example',
+        short_name: 'Quasar Geolocation Example',
+        description: 'Sample app to demonstrate usage of geolocation with Quasar Framework',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -168,7 +168,7 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'quasar-positioning-example'
+        appId: 'quasar-geolocation-example'
       },
 
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration

@@ -1,6 +1,6 @@
-# Quasar Positioning Example (quasar-positioning-example)
+# Quasar Geolocation Example (quasar-geolocation-example)
 
-Sample app to demonstrate usage of positioning with Quasar Framework
+Sample app to demonstrate usage of geolocation with Quasar Framework
 
 ![Building and deploying to surge](https://github.com/tomers/quasar-geolocation-example/workflows/Building%20and%20deploying%20to%20surge/badge.svg)
 

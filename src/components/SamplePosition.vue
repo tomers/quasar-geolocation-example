@@ -39,7 +39,7 @@ export default {
     centerMapper () {
       return this.center && { position: this.center }
     },
-    ...mapGetters('positioning', {
+    ...mapGetters('geolocation', {
       coords: 'getterCoords',
       latitude: 'getterLatitude',
       longitude: 'getterLongitude',
@@ -55,7 +55,7 @@ export default {
     this.actionSamplePosition()
   },
   methods: {
-    ...mapActions('positioning', [
+    ...mapActions('geolocation', [
       'actionSamplePosition'
     ])
   }

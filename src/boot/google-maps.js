@@ -2,7 +2,6 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 
 // "async" is optional
 export default async ({ app, Vue /* app, router, Vue, ... */ }) => {
-  console.dir(process.env)
   Vue.use(VueGoogleMaps, {
     load: {
       key: process.env.GOOGLE_API_KEY,

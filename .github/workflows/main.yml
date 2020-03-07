@@ -18,16 +18,23 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+
       - name: Install project
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install # will run `yarn install` command
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: Create dotenv file
+        uses: TickX/var-to-dotenv@v1.1.1
+        with:
+          key: "GOOGLE_API_KEY"
+          value: ${{secrets.GOOGLE_API_KEY}}
+
       - name: Test project
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: test # will run `yarn test` command
+
       - name: Deploy project
         uses: borales/actions-yarn@v2.0.0
         with:
@@ -35,4 +42,3 @@ jobs:
         env:
           SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}

@@ -22,6 +22,8 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install # will run `yarn install` command
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       - name: Test project
         uses: borales/actions-yarn@v2.0.0
         with:
@@ -33,4 +35,3 @@ jobs:
         env:
           SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}

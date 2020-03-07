@@ -1,10 +1,9 @@
 <template>
   <div v-if="coords">
-    <div>Accuracy: {{ accuracy }} meters</div>
     <GmapMap
       :center="center"
       :zoom="15"
-      map-type-id="terrain"
+      map-type-id="satellite"
       style="width: 500px; height: 300px"
     >
       <GmapMarker
@@ -27,11 +26,6 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  data () {
-    return {
-      markers: []
-    }
-  },
   computed: {
     center () {
       return this.coords && { lat: this.latitude, lng: this.longitude }
@@ -44,11 +38,9 @@ export default {
       latitude: 'getterLatitude',
       longitude: 'getterLongitude',
       accuracy: 'getterAccuracy'
-    })
-  },
-  watch: {
-    centerMapper () {
-      this.markers = this.centerMapper ? [this.centerMapper] : []
+    }),
+    markers () {
+      return this.centerMapper ? [this.centerMapper] : []
     }
   }
 }

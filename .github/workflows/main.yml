@@ -22,8 +22,6 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install # will run `yarn install` command
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       - name: Test project
         uses: borales/actions-yarn@v2.0.0
         with:

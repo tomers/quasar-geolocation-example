@@ -14,8 +14,8 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.0.0",
-    "quasar": "^1.0.0",
+    "@quasar/extras": "^1.6.0",
+    "quasar": "^1.9.9",
     "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {

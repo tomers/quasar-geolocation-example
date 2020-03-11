@@ -1,4 +1,4 @@
-# Quasar Geolocation Example (quasar-geolocation-example)
+# Quasar Geolocation Example
 
 Sample app to demonstrate usage of geolocation with Quasar Framework
 

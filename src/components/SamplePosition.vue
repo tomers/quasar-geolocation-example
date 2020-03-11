@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'quasar-app-extension-geolocation/src/store'
 
 export default {
   computed: {
@@ -33,15 +33,15 @@ export default {
     centerMapper () {
       return this.center && { position: this.center }
     },
-    ...mapGetters('geolocation', {
-      coords: 'getterCoords',
-      latitude: 'getterLatitude',
-      longitude: 'getterLongitude',
-      accuracy: 'getterAccuracy'
-    }),
     markers () {
       return this.centerMapper ? [this.centerMapper] : []
-    }
+    },
+    ...mapGetters([
+      'coords',
+      'latitude',
+      'longitude',
+      'accuracy'
+    ])
   }
 }
 </script>

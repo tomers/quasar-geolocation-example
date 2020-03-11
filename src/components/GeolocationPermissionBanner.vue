@@ -11,7 +11,7 @@
     </template>
     {{ label }}
     <template
-      v-if="getterIsPermissionDenied"
+      v-if="isPermissionDenied"
       v-slot:action
     >
       <q-btn
@@ -25,55 +25,55 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'quasar-app-extension-geolocation/src/store'
 
 export default {
   computed: {
     classes () {
-      if (this.getterIsPermissionGranted) {
+      if (this.isPermissionGranted) {
         return 'bg-primary text-white'
-      } else if (this.getterIsPermissionPrompt) {
+      } else if (this.isPermissionPrompt) {
         return 'bg-grey-3'
-      } else if (this.getterIsPermissionDenied) {
+      } else if (this.isPermissionDenied) {
         return 'text-white bg-red'
       }
       return null
     },
     icon () {
-      if (this.getterIsPermissionGranted) {
+      if (this.isPermissionGranted) {
         return 'done'
-      } else if (this.getterIsPermissionPrompt) {
+      } else if (this.isPermissionPrompt) {
         return 'info'
-      } else if (this.getterIsPermissionDenied) {
+      } else if (this.isPermissionDenied) {
         return 'block'
       }
       return null
     },
     iconColor () {
-      if (this.getterIsPermissionGranted) {
+      if (this.isPermissionGranted) {
         return 'white'
-      } else if (this.getterIsPermissionPrompt) {
+      } else if (this.isPermissionPrompt) {
         return null
-      } else if (this.getterIsPermissionDenied) {
+      } else if (this.isPermissionDenied) {
         return 'white'
       }
       return null
     },
     label () {
-      if (this.getterIsPermissionGranted) {
+      if (this.isPermissionGranted) {
         return 'Geolocation privileges granted'
-      } else if (this.getterIsPermissionPrompt) {
+      } else if (this.isPermissionPrompt) {
         return 'Need to ask for geolocation privileges'
-      } else if (this.getterIsPermissionDenied) {
+      } else if (this.isPermissionDenied) {
         return 'Location sharing is blocked'
       }
       return null
     },
-    ...mapGetters('geolocation', [
-      'getterIsPermissionGranted',
-      'getterIsPermissionPrompt',
-      'getterIsPermissionDenied',
-      'getterHasPosition'
+    ...mapGetters([
+      'isPermissionGranted',
+      'isPermissionPrompt',
+      'isPermissionDenied',
+      'hasPosition'
     ])
   }
 }

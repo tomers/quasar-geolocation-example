@@ -7766,10 +7766,10 @@ qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
-quasar-app-extension-geolocation@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/quasar-app-extension-geolocation/-/quasar-app-extension-geolocation-0.0.4.tgz#be8f1eba0d64af6454a5e036aee17b80d91e1e20"
-  integrity sha512-KmB68MjvghTuPNXgnPOQygv92U9b31QwRngGYYwf4Q6oR0v97JZ/69EEh7G0vTADZbQ2X0F3btB0UMPQt9oT1A==
+quasar-app-extension-geolocation@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/quasar-app-extension-geolocation/-/quasar-app-extension-geolocation-0.1.0.tgz#ccd3d3fe03441d031e39c9101d968be31f574c49"
+  integrity sha512-AaDAJMHxayEXoLHXY2MJ9lDsWRnHkY2+BXE0LLayqt/oy9bVJa0+/DUmsrn5/jz6fpJNILYkURFE8ebDO8d6Yg==
 
 quasar@^1.9.9:
   version "1.9.10"

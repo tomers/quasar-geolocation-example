@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'quasar-app-extension-geolocation/src/store'
+import { mapGeolocationGetters } from 'quasar-app-extension-geolocation/src/store'
 
 import GeolocationPermissionBanner from './GeolocationPermissionBanner'
 import SampleGeolocationButton from './SampleGeolocationButton'
@@ -24,7 +24,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
+    ...mapGeolocationGetters([
       'hasPosition'
     ])
   }

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'quasar-app-extension-geolocation/src/store'
+import { mapGeolocationActions, mapGeolocationGetters } from 'quasar-app-extension-geolocation/src/store'
 
 export default {
   props: {
@@ -38,7 +38,7 @@ export default {
     _label () {
       return this.label || this.hasPosition ? 'Resample' : 'Sample'
     },
-    ...mapGetters([
+    ...mapGeolocationGetters([
       'isPermissionKnown',
       'isPermissionGranted',
       'isPermissionPrompt',
@@ -69,7 +69,7 @@ export default {
           this.doQueryPermission()
         })
     },
-    ...mapActions([
+    ...mapGeolocationActions([
       'samplePosition',
       'queryPermission'
     ])

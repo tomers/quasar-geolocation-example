@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'quasar-app-extension-geolocation/src/store'
+import { mapGeolocationGetters } from 'quasar-app-extension-geolocation/src/store'
 
 export default {
   computed: {
@@ -69,7 +69,7 @@ export default {
       }
       return null
     },
-    ...mapGetters([
+    ...mapGeolocationGetters([
       'isPermissionGranted',
       'isPermissionPrompt',
       'isPermissionDenied',

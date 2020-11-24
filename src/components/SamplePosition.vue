@@ -1,5 +1,6 @@
 <template>
   <div v-if="coords">
+    Coords: {{ coords }}
     <GmapMap
       :center="center"
       :zoom="15"
